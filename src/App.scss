@@ -1,0 +1,12 @@
+@import './_define';
+
+.app-wrapper{
+    margin: 0 auto;
+    max-width: 430px;
+    min-height: 100vh;
+    border:1px solid #ccc;
+    
+    @include mediaMax($autoWidth){
+        max-width: 100%;
+    }
+}
