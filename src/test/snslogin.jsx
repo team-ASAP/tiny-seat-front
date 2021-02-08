@@ -1,5 +1,6 @@
 import axios from "axios";
 import { OldSocialLogin as SocialLogin } from "react-social-login";
+import TwitterLogin from "react-twitter-login";
 
 const handleGoogleLogin = (user, err) => {
   axios
@@ -58,13 +59,13 @@ const App = () => {
       >
         <button>Login with Google</button>
       </SocialLogin>
-      {/* <SocialLogin
-        provider="twitter"
-        appId=""
-        callback={handleTwitterLogin}
+      {/* <TwitterLogin
+        authCallback={handleTwitterLogin}
+        consumerKey=""
+        consumerSecret=""
       >
         <button>Login with Twitter</button>
-      </SocialLogin> */}
+      </TwitterLogin> */}
     </div>
   );
 };
