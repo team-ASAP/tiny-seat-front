@@ -4,8 +4,8 @@
     display: flex;
     align-items: center;
     justify-content: space-between;
-    padding: 0 30px;
     height: 65px;
+    margin-bottom: 20px; // 추후 content-wrapper로 빼기
     text-align: center;
 }
 

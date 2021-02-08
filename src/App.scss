@@ -2,6 +2,7 @@
 
 .app-wrapper{
     margin: 0 auto;
+    padding: 0 30px;
     max-width: 430px;
     min-height: 100vh;
     border:1px solid #ccc;
@@ -9,4 +10,10 @@
     @include mediaMax($autoWidth){
         max-width: 100%;
     }
+}
+
+.poster-wrapper{
+    display: flex;
+    justify-content: space-between;
+    margin: 10% 0;
 }
