@@ -1,30 +1,31 @@
-@import '../../_define';
+@import "../../_define";
 
-.header-wrapper{
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    height: 65px;
-    margin-bottom: 20px; // 추후 content-wrapper로 빼기
-    text-align: center;
+.header-wrapper {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  height: 65px;
+  padding: 0 30px;
+  text-align: center;
 }
 
 .header-home,
-.header-add{
-    a, button{
-        font-size: 1.3rem;
-        color: #ccc;
-    }
+.header-add {
+  a,
+  button {
+    font-size: 1.3rem;
+    color: #ccc;
+  }
 }
 
-.header-title{
-    a{
-        font-size: 1.5rem;
-        font-family: "국립박물관문화재단클래식B";
-        color: #1c1c1c;
-        span{
-            margin-left: 5px;
-            // color: #770000;
-        }
+.header-title {
+  a {
+    font-size: 1.5rem;
+    font-family: "국립박물관문화재단클래식B";
+    color: #1c1c1c;
+    span {
+      margin-left: 5px;
+      // color: #770000;
     }
+  }
 }

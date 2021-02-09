@@ -1,0 +1,15 @@
+.footer-wrapper {
+  margin-top: 200px;
+  font-size: 12px;
+  text-align: center;
+  color: #bbb;
+  div {
+    padding: 3px 0;
+    &:last-child {
+      padding-bottom: 0;
+    }
+  }
+  a {
+    color: #bbb;
+  }
+}

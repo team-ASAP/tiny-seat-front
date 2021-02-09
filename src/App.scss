@@ -1,11 +1,11 @@
 @import "./_define";
 
 .app-wrapper {
+  position: relative;
   margin: 0 auto;
-  padding: 0 30px;
   max-width: 430px;
   min-height: 100vh;
-  border: 1px solid #ccc;
+  border: 1px solid #cccccc;
 
   @include mediaMax($autoWidth) {
     max-width: 100%;
