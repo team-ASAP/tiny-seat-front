@@ -1,16 +1,15 @@
-$defaul-font-color: #333;
+$default-font-color: #333;
 
 $autoWidth: 425px;
 
-
-@mixin mediaMax($tarW){
-    @media all and (max-width: $tarW) {
-        @content;
-    }
+@mixin mediaMax($tarW) {
+  @media all and (max-width: $tarW) {
+    @content;
+  }
 }
 
-@mixin mediaMin($tarW){
-    @media all and (min-width: $tarW) {
-        @content;
-    }
+@mixin mediaMin($tarW) {
+  @media all and (min-width: $tarW) {
+    @content;
+  }
 }
