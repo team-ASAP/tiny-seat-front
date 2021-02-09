@@ -1,7 +1,6 @@
-@import './_define';
+@import "./_define";
 
-
-*{
+* {
   box-sizing: border-box;
 }
 
@@ -78,14 +77,15 @@ video {
   padding: 0;
   border: 0;
   outline: 0;
-  font-size: 100%;
   vertical-align: baseline;
   background: transparent;
 }
 
-html, body{
+html,
+body {
   height: 100%;
   color: $defaul-font-color;
+  font-size: 14px;
 }
 
 body {
@@ -171,22 +171,25 @@ hr {
   padding: 0;
 }
 
-input,button,textarea,select{
-  margin:0;
-  padding:0;
+input,
+button,
+textarea,
+select {
+  margin: 0;
+  padding: 0;
   border-radius: 0;
-  font-size:1rem;
   appearance: none;
-  box-sizing:border-box;
-  word-break:keep-all;
-  -webkit-text-size-adjust:none; // ios 자동 폰트사이즈 변경 방지 
+  box-sizing: border-box;
+  word-break: keep-all;
+  -webkit-text-size-adjust: none; // ios 자동 폰트사이즈 변경 방지
 }
 
-button,label{
-  cursor:pointer;
+button,
+label {
+  cursor: pointer;
 }
 
-button{
+button {
   border: 0;
   outline: 0;
   background: transparent;
