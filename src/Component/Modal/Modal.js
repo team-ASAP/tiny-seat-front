@@ -7,7 +7,7 @@ const cx = classNames.bind(style);
 
 const ModalWrapper = styled.div`
   z-index: ${(props) => (props.isModalActive ? "99" : "-1")};
-  transition: all 0.7s ease;
+  transition: all 0.5s ease;
   opacity: ${(props) => (props.isModalActive ? "1" : "0")};
   position: fixed;
   top: 0;
@@ -18,12 +18,33 @@ const ModalWrapper = styled.div`
   background-color: rgba(0, 0, 0, 0.55);
 `;
 
+const ModalContents = styled.div`
+  z-index: 999;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 90%;
+  max-width: ${(props) => props.width || "400px"};
+  padding: 20px 15px;
+  text-align: left;
+  border-radius: 3px;
+  background-color: #fff;
+  box-shadow: 0 0 70px rgba(0, 0, 0, 0.4);
+`;
+
 const Modal = (props) => {
   const { children, isShow, closeFunc, yesFunc } = props;
 
+  const clickBackground = ({ target, currentTarget }) => {
+    if (target === currentTarget) {
+      closeFunc();
+    }
+  };
+
   return (
-    <ModalWrapper isModalActive={isShow}>
-      <div className={cx("modal-contents")}>
+    <ModalWrapper isModalActive={isShow} onClick={clickBackground}>
+      <ModalContents width="500px" id="modelContents">
         <button
           className={cx("modal-close-x-btn")}
           id="closePopBtn"
@@ -38,7 +59,7 @@ const Modal = (props) => {
             예
           </button>
         </div>
-      </div>
+      </ModalContents>
     </ModalWrapper>
   );
 };
