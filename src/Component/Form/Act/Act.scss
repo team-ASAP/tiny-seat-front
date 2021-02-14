@@ -1,0 +1,28 @@
+.act-form-wrapper {
+}
+
+.act-poster {
+	margin-bottom: 20px;
+	height: auto;
+	label {
+		position: relative;
+		display: block;
+		width: 45%;
+		height: auto;
+		margin: 0 auto;
+		padding-top: 55%;
+		background-color: #e6e6e6;
+		&:before {
+			content: '+';
+			position: absolute;
+			top: 50%;
+			left: 50%;
+			transform: translate(-50%, -50%);
+			font-size: 50px;
+			color: #ccc;
+		}
+	}
+	input {
+		display: none;
+	}
+}
