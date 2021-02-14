@@ -1,0 +1,66 @@
+@import '../../define';
+
+.input-box {
+	display: flex;
+	align-items: center;
+	padding: 5px 0;
+	&:first-child {
+		padding-top: 0;
+	}
+	&:last-child {
+		padding-bottom: 0;
+	}
+	label {
+		width: 80px;
+		@include mediaMax($autoWidth - 1) {
+			width: 70px;
+		}
+	}
+
+	.datepicker-header {
+		display: flex;
+		align-items: center;
+		justify-content: space-between;
+		padding: 0 1rem;
+		.month-day {
+			font-size: 18px;
+			font-weight: 900;
+		}
+	}
+}
+
+.react-datepicker-wrapper {
+	display: block;
+	width: auto;
+	flex: 0.5;
+}
+.react-datepicker__header {
+	border-bottom: 0;
+	background-color: #fff;
+}
+.react-datepicker__day {
+	width: 24px;
+	height: 24px;
+	border-radius: 50%;
+}
+.react-datepicker__day--in-range {
+	color: #fff;
+	background-color: #333;
+}
+.input-box {
+	display: flex;
+	align-items: center;
+	flex: 1;
+}
+
+.input-connect {
+	padding: 0 3px;
+}
+
+input {
+	width: 100%;
+	padding: 10px 10px;
+	border: 1px solid #ddd;
+	outline: none;
+	background: transparent;
+}
