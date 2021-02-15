@@ -24,9 +24,9 @@ const handleGoogleLogin = (user, err) => {
     });
 };
 
-const handleTwitterLogin = (user, err) => {
-  console.log(user);
+const handleTwitterLogin = (err, data) => {
   console.log(err);
+  console.log(data);
 
   // axios
   //   .post(
@@ -61,8 +61,8 @@ const App = () => {
       </SocialLogin>
       <TwitterLogin
         authCallback={handleTwitterLogin}
-        consumerKey="sRRytpKHs2sbXcob054lPvLGK"
-        consumerSecret="XDWdS0Stn8A7LMauCQrn2RP8DkeVegq5OIJF2InXJ3cZPJaiMq"
+        consumerKey="u8y7oyXuB8jhfU0zZcXAec11o"
+        consumerSecret="vLo1lmSeoCvfG2uiamqRP7Jbe0KjgNLY4Pr9v4xbt8BZIY54LL"
       >
         <button>Login with Twitter</button>
       </TwitterLogin>
