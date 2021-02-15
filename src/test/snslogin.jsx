@@ -59,13 +59,13 @@ const App = () => {
       >
         <button>Login with Google</button>
       </SocialLogin>
-      {/* <TwitterLogin
+      <TwitterLogin
         authCallback={handleTwitterLogin}
-        consumerKey=""
-        consumerSecret=""
+        consumerKey="sRRytpKHs2sbXcob054lPvLGK"
+        consumerSecret="XDWdS0Stn8A7LMauCQrn2RP8DkeVegq5OIJF2InXJ3cZPJaiMq"
       >
         <button>Login with Twitter</button>
-      </TwitterLogin> */}
+      </TwitterLogin>
     </div>
   );
 };
