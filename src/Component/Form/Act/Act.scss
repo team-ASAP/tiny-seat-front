@@ -1,28 +1,94 @@
-.act-form-wrapper {
+.act-poster {
+  margin-bottom: 20px;
+  height: auto;
+  label {
+    position: relative;
+    display: block;
+    width: 45%;
+    height: auto;
+    margin: 0 auto;
+    padding-top: 55%;
+    background-color: #e6e6e6;
+    &:before {
+      content: "+";
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      font-size: 50px;
+      color: #ccc;
+    }
+  }
+  input {
+    display: none;
+  }
 }
 
-.act-poster {
-	margin-bottom: 20px;
-	height: auto;
-	label {
-		position: relative;
-		display: block;
-		width: 45%;
-		height: auto;
-		margin: 0 auto;
-		padding-top: 55%;
-		background-color: #e6e6e6;
-		&:before {
-			content: '+';
-			position: absolute;
-			top: 50%;
-			left: 50%;
-			transform: translate(-50%, -50%);
-			font-size: 50px;
-			color: #ccc;
-		}
-	}
-	input {
-		display: none;
-	}
+h2 {
+  margin-top: 15px;
+  margin-bottom: 20px;
+}
+
+.act-basic-info {
+  margin-top: -5px;
+}
+
+.act-additional-info {
+  border-top: 1px solid #ddd;
+  margin-top: 15px;
+}
+
+.act-description {
+  display: grid;
+  grid-template-rows: repeat((1, 1fr));
+  grid-template-columns: repeat((3, 1fr));
+  grid-gap: 10px 3%;
+  grid-auto-rows: 1fr;
+  grid-auto-columns: 1fr;
+  margin-bottom: 10px;
+  label {
+    position: relative;
+    display: block;
+    height: auto;
+    padding-top: 115%;
+    background-color: #e6e6e6;
+    &:before {
+      content: "+";
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      font-size: 50px;
+      color: #ccc;
+    }
+  }
+  input {
+    display: none;
+  }
+}
+
+.sponsor-info {
+  display: none;
+  &.open {
+    display: block;
+  }
+}
+
+button {
+  &.add-seat {
+    margin-top: 5px !important;
+    border: 1px dashed #333 !important;
+  }
+  &.add-photo {
+    position: relative;
+    padding-top: 100% !important;
+    border: 1px dashed #333 !important;
+    &:before {
+      content: "사진 추가";
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+    }
+  }
 }
