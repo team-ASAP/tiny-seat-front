@@ -4,8 +4,8 @@ import style from "./Button.scss";
 
 const cx = classNames.bind(style);
 
-const Button = ({ children }) => {
-  return <div className={cx("button-wrapper")}>{children}</div>;
+const Button = ({ children, className }) => {
+  return <div className={cx("button-wrapper", className)}>{children}</div>;
 };
 
 export default Button;

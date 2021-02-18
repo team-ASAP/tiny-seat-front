@@ -11,8 +11,10 @@ import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import {
   faChevronLeft,
   faChevronRight,
+  faMinusCircle,
 } from "@fortawesome/free-solid-svg-icons";
 import Button from "../../Button/Button";
+import { useEffect } from "react/cjs/react.development";
 
 const cx = classNames.bind(style);
 
@@ -23,7 +25,7 @@ const Act = () => {
   );
   const [sponsorAble, setSponsorAble] = useState(false);
   const [actSeats, setActSeats] = useState([
-    <Input className="act-seat-wrapper">
+    <Input className="act-seat-wrapper" key="0">
       <label for="actSeat1">가격</label>
       <div className={cx("input-box")}>
         <input type="text" name="actSeat1" id="actSeat1"></input>
@@ -40,6 +42,7 @@ const Act = () => {
       <div className={cx("input-unit")}>원</div>
     </Input>,
   ]);
+
   const customHeader = ({
     date,
     changeYear,
@@ -72,6 +75,7 @@ const Act = () => {
     </div>
   );
   registerLocale("ko", ko);
+
   const actSponsorChange = (e) => {
     const {
       target: { checked },
@@ -79,16 +83,24 @@ const Act = () => {
 
     setSponsorAble(checked);
   };
+
+  let removeSeat = (id) => {
+    console.log(actSeats);
+  };
+
   const addSeat = () => {
     const currentSeat =
       document.querySelectorAll(".act-seat-wrapper").length + 1;
+    const addedSeatWithNum = `addedSeat${currentSeat}`;
     const actSeatWithNum = `actSeat${currentSeat}`;
     const actPriceWithNum = `actPrice${currentSeat}`;
 
     setActSeats(
       actSeats.concat(
-        <Input className="act-seat-wrapper">
-          <label for={actSeatWithNum}>추가 가격</label>
+        <Input className="act-seat-wrapper" key={currentSeat - 1}>
+          <div className={cx("remove-add-seat")}>
+            <button onClick={() => removeSeat(currentSeat)}>삭제</button>
+          </div>
           <div className={cx("input-box")}>
             <input
               type="text"

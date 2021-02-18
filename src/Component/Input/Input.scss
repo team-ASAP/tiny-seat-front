@@ -87,7 +87,7 @@ input[type="text"] {
       background-repeat: no-repeat;
       background-size: 20px 20px;
       background-position: center center;
-      background-image: url("/asset/images/check-ico-disabled.png");
+      background-image: url("/asset/images/check-ico-disabled.svg");
     }
   }
   input:checked {
@@ -97,7 +97,7 @@ input[type="text"] {
         background-color: #333;
         background-size: 20px 20px;
         background-position: center center;
-        background-image: url("/asset/images/check-ico-checked.png");
+        background-image: url("/asset/images/check-ico-checked.svg");
       }
     }
   }
