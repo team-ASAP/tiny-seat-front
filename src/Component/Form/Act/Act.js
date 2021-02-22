@@ -3,34 +3,22 @@ import classNames from "classnames/bind";
 import "react-datepicker/dist/react-datepicker.css";
 import style from "./Act.scss";
 import Input from "../../Input/Input";
-import DatePicker, { registerLocale } from "react-datepicker";
-import ko from "date-fns/locale/ko";
-import getYear from "date-fns/getYear";
-import getMonth from "date-fns/getMonth";
-import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import {
-  faChevronLeft,
-  faChevronRight,
-} from "@fortawesome/free-solid-svg-icons";
 import Button from "../../Button/Button";
 import DateInput from "../../Input/Date/DateInput";
 
 const cx = classNames.bind(style);
 
 const Act = () => {
-  const [startDate, setStartDate] = useState(new Date());
-  const [endDate, setEndDate] = useState(
-    new Date().setMonth(startDate.getMonth() + 1)
-  );
+  const today = new Date();
   const [sponsorAble, setSponsorAble] = useState(false);
   const [actSeats, setActSeats] = useState([{ key: 0, type: "default" }]);
   const [actTerm, setActTerm] = useState({
-    startDate: new Date(),
-    endDate: new Date().setMonth(startDate.getMonth() + 1),
+    startDate: today,
+    endDate: new Date().setMonth(today.getMonth() + 1),
   });
   const [sponsorTerm, setSponsorTerm] = useState({
-    startDate: new Date(),
-    endDate: new Date().setMonth(startDate.getMonth() + 1),
+    startDate: today,
+    endDate: new Date().setMonth(today.getMonth() + 1),
   });
 
   const actSponsorChange = (e) => {
