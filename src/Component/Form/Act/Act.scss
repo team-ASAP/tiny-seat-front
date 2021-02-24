@@ -112,7 +112,7 @@ button {
 
 .photo-label {
   &.added {
-    background-size: contain;
+    background-size: cover;
     background-position: center center;
     background-repeat: no-repeat;
     &:before {

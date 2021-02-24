@@ -11,6 +11,7 @@ import Container from "./Component/Container/Container";
 import Modal from "./Component/Modal/Modal";
 import Act from "./Component/Form/Act/Act";
 import { Route, BrowserRouter as Router } from "react-router-dom";
+import Main from "./Component/Main/Main";
 
 const cx = classNames.bind(style);
 
@@ -34,7 +35,7 @@ function App() {
       <Router>
         <Header></Header>
         <Container>
-          <Route path="/"></Route>
+          <Route exact path="/" component={Main}></Route>
           <Route path="/act" component={Act}></Route>
         </Container>
         <Footer></Footer>
