@@ -229,6 +229,11 @@ const Act = () => {
             </div>
           </Input>
         </div>
+        <div className={cx("register-box")}>
+          <Button>
+            <button className={cx("type-black")}>등록</button>
+          </Button>
+        </div>
       </div>
     </div>
   );
