@@ -20,6 +20,10 @@ const Act = () => {
     startDate: today,
     endDate: new Date().setMonth(today.getMonth() + 1),
   });
+  const [posterFile, setPosterFile] = useState(null);
+  const [posterBase64, setPosterBase64] = useState("");
+  const [descFile, setDescFile] = useState([null]);
+  const [descBase64, setDescBase64] = useState([null]);
 
   const actSponsorChange = (e) => {
     const {
@@ -65,16 +69,23 @@ const Act = () => {
       let newBase64 = [...descBase64];
       newBase64[idx] = base64;
 
+      if (!descBase64[idx]) {
+        newBase64 = [...newBase64, null];
+      }
       if (base64) {
-        setDescBase64(newBase64.concat(null));
+        setDescBase64(newBase64);
       }
     };
+
     if (file) {
       reader.readAsDataURL(file);
       let newFile = [...descFile];
       newFile[idx] = file;
 
-      setDescFile(newFile.concat(null));
+      if (!descFile[idx]) {
+        newFile = [...newFile, null];
+      }
+      setDescFile(newFile);
     }
   };
 
@@ -170,12 +181,24 @@ const Act = () => {
       <div className={cx("act-additional-info")}>
         <h2>부가 정보</h2>
         <div className={cx("act-description")}>
-          <div className={cx("add-photo-box")}>
-            <label htmlFor="actDesc1">
-              <span className={cx("text-hidden")}>공연 정보 사진 등록</span>
-            </label>
-            <input type="file" name="actDesc1" id="actDesc1"></input>
-          </div>
+          {descFile.map((item, idx) => (
+            <div className={cx("add-photo-box")} key={idx}>
+              <label
+                htmlFor={`actDesc${idx}`}
+                className={cx("photo-label", item ? "added" : "")}
+                style={{ backgroundImage: `url(${descBase64[idx]})` }}
+              >
+                <span className={cx("text-hidden")}>공연 정보 사진 등록</span>
+              </label>
+              <input
+                type="file"
+                name={`actDesc${idx}`}
+                id={`actDesc${idx}`}
+                accept="image/*"
+                onChange={(e) => addActDesc(e, idx)}
+              ></input>
+            </div>
+          ))}
         </div>
 
         <Input>
