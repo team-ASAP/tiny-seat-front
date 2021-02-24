@@ -3,6 +3,7 @@ import classNames from "classnames/bind";
 import style from "./Main.scss";
 import Icon from "../Icon/Icon";
 import Button from "../Button/Button";
+import { Link } from "react-router-dom";
 
 const cx = classNames.bind(style);
 
@@ -20,7 +21,9 @@ const Main = () => {
           <Icon type="poster"></Icon>
         </div>
         <Button>
-          <button className={cx("type-white")}>더보기</button>
+          <Link to="/act" className={cx("type-white")}>
+            더보기
+          </Link>
         </Button>
       </div>
       <div className={cx("main-act-box")}>
@@ -34,7 +37,9 @@ const Main = () => {
           <Icon type="poster"></Icon>
         </div>
         <Button>
-          <button className={cx("type-white")}>더보기</button>
+          <Link to="/act" className={cx("type-white")}>
+            더보기
+          </Link>
         </Button>
       </div>
       <div className={cx("main-group-box")}>
