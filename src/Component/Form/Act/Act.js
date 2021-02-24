@@ -41,11 +41,52 @@ const Act = () => {
     setActSeats(actSeats.concat(newSeatObj));
   };
 
+  const addActPoster = (e) => {
+    const reader = new FileReader();
+    const file = e.target.files[0];
+    reader.onloadend = () => {
+      const base64 = reader.result;
+      if (base64) {
+        setPosterBase64(base64.toString());
+      }
+    };
+    if (file) {
+      reader.readAsDataURL(file);
+      setPosterFile(file);
+    }
+  };
+
+  const addActDesc = (e, idx) => {
+    const reader = new FileReader();
+    const file = e.target.files[0];
+
+    reader.onloadend = () => {
+      const base64 = reader.result;
+      let newBase64 = [...descBase64];
+      newBase64[idx] = base64;
+
+      if (base64) {
+        setDescBase64(newBase64.concat(null));
+      }
+    };
+    if (file) {
+      reader.readAsDataURL(file);
+      let newFile = [...descFile];
+      newFile[idx] = file;
+
+      setDescFile(newFile.concat(null));
+    }
+  };
+
   return (
     <div className={cx("act-form-wrapper")}>
       <h2>기본 정보</h2>
       <div className={cx("act-poster")}>
-        <label htmlFor="actPoster">
+        <label
+          htmlFor="actPoster"
+          className={cx("photo-label", posterFile ? "added" : "")}
+          style={{ backgroundImage: `url(${posterBase64})` }}
+        >
           <span className={cx("text-hidden")}>포스터 등록</span>
         </label>
         <input
@@ -53,6 +94,7 @@ const Act = () => {
           name="actPoster"
           id="actPoster"
           accept="image/*"
+          onChange={addActPoster}
         ></input>
       </div>
       <div className={cx("act-basic-info")}>
