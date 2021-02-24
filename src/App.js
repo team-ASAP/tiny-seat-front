@@ -10,6 +10,7 @@ import Footer from "./Component/Footer/Footer";
 import Container from "./Component/Container/Container";
 import Modal from "./Component/Modal/Modal";
 import Act from "./Component/Form/Act/Act";
+import { Route, BrowserRouter as Router } from "react-router-dom";
 
 const cx = classNames.bind(style);
 
@@ -30,11 +31,14 @@ function App() {
 
   return (
     <div className={cx("app-wrapper")}>
-      <Header></Header>
-      <Container>
-        <Act></Act>
-      </Container>
-      <Footer></Footer>
+      <Router>
+        <Header></Header>
+        <Container>
+          <Route path="/"></Route>
+          <Route path="/act" component={Act}></Route>
+        </Container>
+        <Footer></Footer>
+      </Router>
     </div>
   );
 }

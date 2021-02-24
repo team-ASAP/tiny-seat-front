@@ -7,6 +7,7 @@ import {
   faHome,
   faPlusCircle,
 } from "@fortawesome/free-solid-svg-icons";
+import { Link } from "react-router-dom";
 
 const cx = classNames.bind(style);
 
@@ -14,17 +15,17 @@ const Header = () => {
   return (
     <div className={cx("header-wrapper")}>
       <div className={cx("header-home")}>
-        <a href="">
+        <Link to="/">
           <FontAwesomeIcon icon={faHome} />
-        </a>
+        </Link>
       </div>
       <h1 className={cx("header-title")}>
-        <a href="">
+        <Link to="/">
           작은 객석
           <span>
             <FontAwesomeIcon icon={faChair} />
           </span>
-        </a>
+        </Link>
       </h1>
       <div className={cx("header-add")}>
         <button>
